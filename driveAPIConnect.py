@@ -23,7 +23,6 @@ def main():
     """
     Prints the names and ids of the first 10 files the user has access to.
     TODO: split into authorize, connect, and print functions
-    TODO: have print function print parent folder only (the one closest to root)
     """
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
@@ -47,16 +46,18 @@ def main():
     service = build('drive', 'v3', credentials=creds)
 
     # Call the Drive v3 API and get a list of folders
-    # use service.files.list with appropriate parameters
-    results = service.files().list(q="mimeType = 'application/vnd.google-apps.folder'",
+    # use service.files.list with appropriate parameters - returns a dict
+    results = service.files().list(q="name='NEW MUSIC'",
                                    spaces="drive").execute()
+
+    # obtain list of files from results
     items = results.get('files', [])
 
     if not items:
         print("No files were found.")
     else:
         for item in items:
-            print(item['name'])
+            print('\n%s' % item['name'])
 
 
 if __name__ == '__main__':
