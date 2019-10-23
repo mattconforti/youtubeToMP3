@@ -10,8 +10,11 @@ By: Matt Conforti
 import youtube_dl
 
 
-# functions -------
+# global vars -------
+debug = True
 
+
+# functions -------
 def getURLInput():
     """
     Creates a list of strings input by the user and returns it
@@ -26,27 +29,37 @@ def getURLInput():
     return urlList
 
 
-def download(ydlOptions, urlList):
+def download(ydlOptions, url):
     """
-    Uses youtube_dl's download function to process the given list
+    Uses youtube_dl's download function to process the given URL
     :param ydlOptions: a dict containing settings for the download
-    :param urlList: the list of URL's to download
+    :param url: the URL of the song
+    :return urlInfo: a dict containing information about the song
     """
     with youtube_dl.YoutubeDL(ydlOptions) as ydl:
-        ydl.download(urlList)
+        urlInfo = ydl.extract_info(url, download=True)
+        return urlInfo
 
 
 def main():
     print('\nEnter YouTube URLs below.')
     urlList = getURLInput()
     ydlOpts = {'format': 'bestaudio/best',
+               'no_warnings': True,
                'nocheckcertificate': True,
                'noplaylist': True,
                'postprocessors': [{'key': 'FFmpegExtractAudio',
                                    'preferredcodec': 'mp3',
                                    'preferredquality': '192', }],
                }
-    download(ydlOpts, urlList)
+
+    for item in urlList:
+        itemInfo = download(ydlOpts, item)
+        artist = itemInfo.get('creator')
+        title = itemInfo.get('alt_title')
+        print('\nArtist: %s\nTitle: %s\n' % (artist, title))
+        if debug:
+            print(itemInfo)
 
 
 # main code -------

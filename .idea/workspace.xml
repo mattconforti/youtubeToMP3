@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e17220d-0cff-4431-ba3f-bd4faf122e81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/driveAPIConnect.py" beforeDir="false" afterPath="$PROJECT_DIR$/driveAPIConnect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/youtubeToMP3.py" beforeDir="false" afterPath="$PROJECT_DIR$/youtubeToMP3.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,23 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/youtubeToMP3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="322">
+              <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/driveAPIConnect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="720">
               <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-              <folding>
-                <element signature="e#133#146#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -48,9 +46,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/youtubeToMP3.py" />
         <option value="$PROJECT_DIR$/venv/driveAPIConnect.py" />
         <option value="$PROJECT_DIR$/driveAPIConnect.py" />
+        <option value="$PROJECT_DIR$/youtubeToMP3.py" />
       </list>
     </option>
   </component>
@@ -66,7 +64,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -78,6 +75,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -95,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.driveAPIConnect">
+  <component name="RunManager" selected="Python.youtubeToMP3">
     <configuration name="driveAPIConnect" type="PythonConfigurationType" factoryName="Python">
       <module name="youtubeMP3downloader" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -158,9 +156,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1821" y="300" width="1644" height="910" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1710362" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17290886" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -189,23 +186,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/driveAPIConnect.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/youtubeToMP3.py">
+    <entry file="file://$PROJECT_DIR$/venv/driveAPIConnect.py" />
+    <entry file="file://$PROJECT_DIR$/driveAPIConnect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="720">
+          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/driveAPIConnect.py">
+    <entry file="file://$PROJECT_DIR$/youtubeToMP3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-          <folding>
-            <element signature="e#133#146#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="322">
+          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
         </state>
       </provider>
     </entry>
