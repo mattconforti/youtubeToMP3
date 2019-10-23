@@ -1,5 +1,5 @@
 """
-driveAPIConnect.py - connects to Google Drive API
+driveAPIConnect.py - connects to Google Drive API and searches for the 'NEW MUSIC' folder
 for use in youtubeToMP3.py (with code from https://developers.google.com/drive/api/v3/quickstart/python
 and https://developers.google.com/drive/api/v3/about-auth)
 By: Matt Conforti
@@ -19,10 +19,12 @@ from google.auth.transport.requests import Request
 SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
 
 
-def main():
+# functions -------
+def authorizeUser():
     """
-    Prints the names and ids of the first 10 files the user has access to.
-    TODO: split into authorize, connect, and print functions
+    Uses pickle module to serialize credentials
+    and authenticate the user to use API services
+    :return: creds: the credentials of the user
     """
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
@@ -42,22 +44,48 @@ def main():
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
+    return creds
 
-    service = build('drive', 'v3', credentials=creds)
 
+def apiCall(credentials):
+    """
+    Make a call to the API, and query files found inside
+    Google Drive until the NEW MUSIC folder is found
+    :param credentials: the user's credentials
+    :return: results: a dict containing a response from the API call
+    """
+    service = build('drive', 'v3', credentials=credentials)
     # Call the Drive v3 API and get a list of folders
-    # use service.files.list with appropriate parameters - returns a dict
-    results = service.files().list(q="name='NEW MUSIC'",
-                                   spaces="drive").execute()
+    # using service.files.list with appropriate parameters ('q' is a query string)
+    results = service.files().list(q="name='NEW MUSIC'", spaces="drive").execute()
+    return results
 
+
+def analyzeResults(apiResponse):
+    """
+    Print a list of files from the results as well as
+    the other attributes associated with the response
+    :param apiResponse: the response from apiCall()
+    """
     # obtain list of files from results
-    items = results.get('files', [])
+    items = apiResponse.get('files', [])
 
     if not items:
-        print("No files were found.")
+        print('No files were found.')
     else:
+        print('\nFiles:')
         for item in items:
-            print('\n%s' % item['name'])
+            print('%s\n' % item['name'])
+
+    print('Response Body:')
+    print('kind: %s\nnextPageToken: %s\nincompleteSearch: %s'
+          % (apiResponse.get('kind'), apiResponse.get('nextPageToken'), apiResponse.get('incompleteSearch')))
+
+
+def main():
+    userCredentials = authorizeUser()
+    apiResponse = apiCall(userCredentials)
+    analyzeResults(apiResponse)  # print the results from the API call
 
 
 if __name__ == '__main__':
