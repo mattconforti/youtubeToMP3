@@ -15,12 +15,15 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 
+# global vars -------
+PARENTID = 0
+
 # SCOPES - if modified delete token.pickle
-SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
+READONLYSCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
 
 
 # functions -------
-def authorizeUser():
+def authorizeUser(scopes):
     """
     Uses pickle module to serialize credentials
     and authenticate the user to use API services
@@ -39,7 +42,7 @@ def authorizeUser():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                'credentials.json', scopes)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
@@ -63,29 +66,38 @@ def apiCall(credentials):
 
 def analyzeResults(apiResponse):
     """
-    Print a list of files from the results as well as
-    the other attributes associated with the response
+    Prints a list of files from the API call response
+    and returns a list of their id numbers
     :param apiResponse: the response from apiCall()
+    :return idList: a list of id's of found files
     """
+    idList = []
+
     # obtain list of files from results
     items = apiResponse.get('files', [])
 
     if not items:
         print('No files were found.')
     else:
-        print('\nFiles:')
+        print('\nFiles -------')
         for item in items:
-            print('%s\n' % item['name'])
+            print('%s - ID# %s\n' % (item['name'], item['id']))
+            idList.append(item['id'])
 
-    print('Response Body:')
+    print('Response Body -------')
     print('kind: %s\nnextPageToken: %s\nincompleteSearch: %s'
-          % (apiResponse.get('kind'), apiResponse.get('nextPageToken'), apiResponse.get('incompleteSearch')))
+          % (apiResponse.get('kind'),
+             apiResponse.get('nextPageToken'),
+             apiResponse.get('incompleteSearch')))
+    return idList
 
 
 def main():
-    userCredentials = authorizeUser()
+    userCredentials = authorizeUser(READONLYSCOPES)
     apiResponse = apiCall(userCredentials)
-    analyzeResults(apiResponse)  # print the results from the API call
+    fileIDList = analyzeResults(apiResponse)
+    global PARENTID
+    PARENTID = fileIDList[0]
 
 
 if __name__ == '__main__':
