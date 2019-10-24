@@ -51,6 +51,8 @@ def main():
                'postprocessors': [{'key': 'FFmpegExtractAudio',
                                    'preferredcodec': 'mp3',
                                    'preferredquality': '192', }],
+               # where to output mp3 file...
+               'outtmpl': '/Users/mattconforti/newMusic/%(creator)s - %(alt_title)s.%(ext)s'
                }
 
     for item in urlList:
