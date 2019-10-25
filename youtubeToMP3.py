@@ -52,7 +52,7 @@ def main():
                                    'preferredcodec': 'mp3',
                                    'preferredquality': '192', }],
                # where to output mp3 file...
-               'outtmpl': '/Users/mattconforti/newMusic/%(creator)s - %(alt_title)s.%(ext)s'
+               'outtmpl': '%(creator)s - %(alt_title)s.%(ext)s'
                }
 
     for item in urlList:

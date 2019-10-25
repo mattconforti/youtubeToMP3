@@ -52,7 +52,7 @@ def main():
 
     # test
     parentFolder = driveAPIConnect.PARENTID
-    newUpload = uploadFile("/Users/mattconforti/newMusic/LilTjay-Ruthless.mp3", parentFolder)
+    newUpload = uploadFile("YK Osiris - Worth It Remix (ft.Tory Lanez & Ty Dolla $ign).mp3", parentFolder)
     print(newUpload)
 
 
