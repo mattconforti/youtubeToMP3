@@ -15,5 +15,14 @@ parentFolder = "1bCYIwkcGb0D0Ha3nGVUhZ8rO6caB8InJ"
 newFilesList = getUploadData()
 for file in newFilesList:
     print(file)
-#newUpload = uploadFile("Dave East - Godfather 4.mp3", parentFolder)
-#print(newUpload)
+
+uploadBool = input('-------\nUPLOAD? (Y/N): ')
+print('-------\n')
+
+if uploadBool == 'Y':
+    for file in newFilesList:
+        newUpload = uploadFile(file, parentFolder)
+        print(newUpload)
+else:
+    print("Download Successful.")
+    exit(0)
