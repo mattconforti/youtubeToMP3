@@ -20,24 +20,21 @@ READWRITESCOPES = ['https://www.googleapis.com/auth/drive']
 # functions -------
 def getUploadData():
     """
-    Retrieves a list of fileNames to be uploaded from the OS
+    Retrieves a list of fileNames from the OS to be uploaded
     :return: fileList: the list of fileNames to upload
     """
     fileList = []
     currentDateTime = dt.datetime.now()
     timeAgo = currentDateTime - dt.timedelta(minutes=5)  # 5 minute window of seeing new files
-    print('\nGetting files as of %s...' % timeAgo)
+    print('\nGetting files as of %s...\n' % timeAgo)
     dirList = (os.listdir('/Users/mattconforti/Desktop/CSC/Python/youtubeMP3downloader'))
-    print('\nFile List:')
     for item in dirList:
         if item.__contains__('.mp3'):
             st = os.stat(item)
             ctime = dt.datetime.fromtimestamp(st.st_ctime)
             if ctime > timeAgo:  # list songs that are created < 1 min ago
                 fileList.append(item)
-
-    for file in fileList:
-        print(file)
+    return fileList
 
 
 def uploadFile(fileName, parentID):
