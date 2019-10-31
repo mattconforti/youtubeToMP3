@@ -23,7 +23,12 @@ def getUploadData():
     Retrieves a list of fileNames to be uploaded from the OS
     :return: fileList: the list of fileNames to upload
     """
-    pass
+    fileList = []
+    dirList = (os.listdir('/Users/mattconforti/Desktop/CSC/Python/youtubeMP3downloader'))
+    print('\nFile List:')
+    for item in dirList:
+        if item.__contains__('.mp3'):
+            print(item)
 
 
 def uploadFile(fileName, parentID):
@@ -37,25 +42,9 @@ def uploadFile(fileName, parentID):
     service = build('drive', 'v3', credentials=usrCreds)  # build API service
 
     fileMetaData = {'name': fileName, 'parents': [{'id': parentID}]}
-    fileMedia = MediaFileUpload(fileName, mimetype='audio/mpeg', resumable=True)
+    fileMedia = MediaFileUpload(fileName, mimetype='audio/mpeg')
 
     fileUploaded = service.files().create(body=fileMetaData,
                                           media_body=fileMedia,
                                           fields='id').execute()
     return fileUploaded
-
-
-def main():
-    # fileNames = getUploadData()
-    #  for file in fileNames:
-    #      uploadFile(file)
-
-    # test
-    parentFolder = driveAPIConnect.PARENTID
-    newUpload = uploadFile("YK Osiris - Worth It Remix (ft.Tory Lanez & Ty Dolla $ign).mp3", parentFolder)
-    print(newUpload)
-
-
-# main code -------
-if __name__ == '__main__':
-    main()

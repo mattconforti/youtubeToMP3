@@ -15,9 +15,6 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 
-# global vars -------
-PARENTID = 0
-
 # SCOPES - if modified delete token.pickle
 READONLYSCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
 
@@ -96,8 +93,6 @@ def main():
     userCredentials = authorizeUser(READONLYSCOPES)
     apiResponse = apiCall(userCredentials)
     fileIDList = analyzeResults(apiResponse)
-    global PARENTID
-    PARENTID = fileIDList[0]
 
 
 if __name__ == '__main__':
