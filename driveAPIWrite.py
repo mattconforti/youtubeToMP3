@@ -8,10 +8,10 @@ By: Matt Conforti
 
 # imports -------
 import os
+import datetime as dt
 import driveAPIConnect
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
-
 
 # SCOPES - if modified delete token.pickle
 READWRITESCOPES = ['https://www.googleapis.com/auth/drive']
@@ -24,11 +24,20 @@ def getUploadData():
     :return: fileList: the list of fileNames to upload
     """
     fileList = []
+    currentDateTime = dt.datetime.now()
+    timeAgo = currentDateTime - dt.timedelta(minutes=5)  # 5 minute window of seeing new files
+    print('\nGetting files as of %s...' % timeAgo)
     dirList = (os.listdir('/Users/mattconforti/Desktop/CSC/Python/youtubeMP3downloader'))
     print('\nFile List:')
     for item in dirList:
         if item.__contains__('.mp3'):
-            print(item)
+            st = os.stat(item)
+            ctime = dt.datetime.fromtimestamp(st.st_ctime)
+            if ctime > timeAgo:  # list songs that are created < 1 min ago
+                fileList.append(item)
+
+    for file in fileList:
+        print(file)
 
 
 def uploadFile(fileName, parentID):
