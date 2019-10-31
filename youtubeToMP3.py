@@ -41,7 +41,7 @@ def download(ydlOptions, url):
         return urlInfo
 
 
-def main():
+def convertURLs():
     print('\nEnter YouTube URLs below.')
     urlList = getURLInput()
     ydlOpts = {'format': 'bestaudio/best',
@@ -62,8 +62,3 @@ def main():
         print('\nArtist: %s\nTitle: %s\n' % (artist, title))
         if debug:
             print(itemInfo)
-
-
-# main code -------
-if __name__ == '__main__':
-    main()
