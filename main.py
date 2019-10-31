@@ -7,12 +7,19 @@ By: Matt Conforti
 
 # imports -------
 import youtubeToMP3
+from driveAPIConnect import *
 from driveAPIWrite import *
 
 # main code -------
 youtubeToMP3.convertURLs()
-parentFolder = "1bCYIwkcGb0D0Ha3nGVUhZ8rO6caB8InJ"
-newFilesList = getUploadData()
+userCredentials = authorizeUser(READONLYSCOPES)
+apiResponse = apiCall(userCredentials)
+
+fileIDList = analyzeResults(apiResponse)
+parentFolderID = fileIDList[0]
+print('\nParent Folder ID: %s' % parentFolderID)
+
+newFilesList = getUploadData()  # get list of files to upload
 for file in newFilesList:
     print(file)
 
@@ -23,7 +30,7 @@ if uploadBool == 'Y':
     for file in newFilesList:
         newUpload = uploadFile(file)
         print(newUpload)
-        newUpdate = updateFile(file, newUpload['id'], parentFolder)  # update the file
+        newUpdate = updateFile(file, newUpload['id'], parentFolderID)  # update the file
         print('\nUpdated file: %s' % newUpdate)
 else:
     print("Download Successful.")

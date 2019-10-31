@@ -87,13 +87,3 @@ def analyzeResults(apiResponse):
              apiResponse.get('nextPageToken'),
              apiResponse.get('incompleteSearch')))
     return idList
-
-
-def main():
-    userCredentials = authorizeUser(READONLYSCOPES)
-    apiResponse = apiCall(userCredentials)
-    fileIDList = analyzeResults(apiResponse)
-
-
-if __name__ == '__main__':
-    main()

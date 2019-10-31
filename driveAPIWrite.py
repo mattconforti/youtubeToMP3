@@ -53,7 +53,6 @@ def uploadFile(fileName):
     fileUploaded = service.files().create(body=fileMetaData,
                                           media_body=fileMedia,
                                           fields='id').execute()
-
     return fileUploaded
 
 
