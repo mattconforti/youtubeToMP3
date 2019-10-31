@@ -37,7 +37,7 @@ def getUploadData():
     return fileList
 
 
-def uploadFile(fileName, parentID):
+def uploadFile(fileName):
     """
     Performs a 'simple upload' by connecting to the Drive API
     :param fileName: the name of the file for upload (with extension)
@@ -47,10 +47,25 @@ def uploadFile(fileName, parentID):
     usrCreds = driveAPIConnect.authorizeUser(READWRITESCOPES)  # get credentials
     service = build('drive', 'v3', credentials=usrCreds)  # build API service
 
-    fileMetaData = {'name': fileName, 'parents': [{'id': parentID}]}
+    fileMetaData = {'name': fileName}
     fileMedia = MediaFileUpload(fileName, mimetype='audio/mpeg')
 
     fileUploaded = service.files().create(body=fileMetaData,
                                           media_body=fileMedia,
                                           fields='id').execute()
+
     return fileUploaded
+
+
+def updateFile(fileName, fileID, parentID):
+    """
+    Updates the file and adds parents to it
+    :param fileName:
+    :param fileID:
+    :return: updatedFile: the file resource with parents added
+    """
+    usrCreds = driveAPIConnect.authorizeUser(READWRITESCOPES)  # get credentials
+    service = build('drive', 'v3', credentials=usrCreds)  # build API service
+
+    fileUpdated = service.files().update(fileId=fileID, addParents=parentID).execute()
+    return fileUpdated

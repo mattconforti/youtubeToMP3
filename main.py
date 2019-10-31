@@ -16,13 +16,15 @@ newFilesList = getUploadData()
 for file in newFilesList:
     print(file)
 
-uploadBool = input('-------\nUPLOAD? (Y/N): ')
+uploadBool = input('\n-------\nUPLOAD? (Y/N): ')
 print('-------\n')
 
 if uploadBool == 'Y':
     for file in newFilesList:
-        newUpload = uploadFile(file, parentFolder)
+        newUpload = uploadFile(file)
         print(newUpload)
+        newUpdate = updateFile(file, newUpload['id'], parentFolder)  # update the file
+        print('\nUpdated file: %s' % newUpdate)
 else:
     print("Download Successful.")
     exit(0)
