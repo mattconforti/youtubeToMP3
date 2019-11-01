@@ -9,6 +9,7 @@ By: Matt Conforti
 # imports -------
 import os
 import datetime as dt
+import youtubeToMP3
 import driveAPIConnect
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
@@ -26,7 +27,8 @@ def getUploadData():
     fileList = []
     currentDateTime = dt.datetime.now()
     timeAgo = currentDateTime - dt.timedelta(minutes=5)  # 5 minute window of seeing new files
-    print('\nGetting files as of %s...\n' % timeAgo)
+    if youtubeToMP3.debug:
+        print('\nGetting files as of %s...\n' % timeAgo)
     dirList = (os.listdir('/Users/mattconforti/Desktop/CSC/Python/youtubeMP3downloader'))
     for item in dirList:
         if item.__contains__('.mp3'):
