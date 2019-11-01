@@ -10,6 +10,7 @@ By: Matt Conforti
 # imports -------
 import pickle
 import os.path
+import youtubeToMP3
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -74,16 +75,20 @@ def analyzeResults(apiResponse):
     items = apiResponse.get('files', [])
 
     if not items:
-        print('No files were found.')
+        if youtubeToMP3.debug:
+            print('No files were found.')
     else:
-        print('\nFiles -------')
+        if youtubeToMP3.debug:
+            print('\nFiles -------')
         for item in items:
-            print('%s - ID# %s\n' % (item['name'], item['id']))
+            if youtubeToMP3.debug:
+                print('%s - ID# %s\n' % (item['name'], item['id']))
             idList.append(item['id'])
 
-    print('Response Body -------')
-    print('kind: %s\nnextPageToken: %s\nincompleteSearch: %s'
-          % (apiResponse.get('kind'),
-             apiResponse.get('nextPageToken'),
-             apiResponse.get('incompleteSearch')))
+    if youtubeToMP3.debug:
+        print('Response Body -------')
+        print('kind: %s\nnextPageToken: %s\nincompleteSearch: %s'
+              % (apiResponse.get('kind'),
+              apiResponse.get('nextPageToken'),
+              apiResponse.get('incompleteSearch')))
     return idList

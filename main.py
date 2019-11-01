@@ -17,11 +17,14 @@ apiResponse = apiCall(userCredentials)
 
 fileIDList = analyzeResults(apiResponse)
 parentFolderID = fileIDList[0]
-print('\nParent Folder ID: %s' % parentFolderID)
+
+if youtubeToMP3.debug:
+    print('\nParent Folder ID: %s' % parentFolderID)
 
 newFilesList = getUploadData()  # get list of files to upload
-for file in newFilesList:
-    print(file)
+if youtubeToMP3.debug:
+    for file in newFilesList:
+        print(file)
 
 uploadBool = input('\n-------\nUPLOAD? (Y/N): ')
 print('-------\n')
@@ -29,9 +32,11 @@ print('-------\n')
 if uploadBool == 'Y':
     for file in newFilesList:
         newUpload = uploadFile(file)
-        print(newUpload)
+        if youtubeToMP3.debug:
+            print(newUpload)
         newUpdate = updateFile(file, newUpload['id'], parentFolderID)  # update the file
-        print('\nUpdated file: %s' % newUpdate)
+        if youtubeToMP3.debug:
+            print('\nUpdated file: %s' % newUpdate)
 else:
     print("Download Successful.")
     exit(0)
