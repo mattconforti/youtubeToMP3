@@ -34,7 +34,7 @@ if uploadBool == 'Y':
         newUpload = uploadFile(file)
         if youtubeToMP3.debug:
             print(newUpload)
-        newUpdate = updateFile(file, newUpload['id'], parentFolderID)  # update the file
+        newUpdate = updateFile(file, newUpload['id'], parentFolderID)  # update the file's parents
         if youtubeToMP3.debug:
             print('\nUpdated file: %s' % newUpdate)
 else:
