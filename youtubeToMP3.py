@@ -11,7 +11,7 @@ import youtube_dl
 
 
 # global vars -------
-debug = False
+debug = True
 
 
 # functions -------

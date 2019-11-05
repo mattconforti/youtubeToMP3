@@ -70,3 +70,16 @@ def updateFile(fileName, fileID, parentID):
 
     fileUpdated = service.files().update(fileId=fileID, addParents=parentID).execute()
     return fileUpdated
+
+
+def deleteFile(fileID):
+    """
+    Deletes the file with the given fileID
+    :param fileID: the drive ID of the file to be deleted
+    :return: apiResponse - should be empty response body if successful
+    """
+    usrCreds = driveAPIConnect.authorizeUser(READWRITESCOPES)  # get credentials
+    service = build('drive', 'v3', credentials=usrCreds)  # build API service
+
+    apiResponse = service.files().delete(fileId=fileID).execute()
+    return apiResponse
