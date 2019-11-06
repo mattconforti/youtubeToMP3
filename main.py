@@ -26,8 +26,8 @@ if youtubeToMP3.debug:
     for file in newFilesList:
         print(file)
 
-uploadBool = input('\n-------\nUPLOAD? (Y/N): ')
-print('-------\n')
+uploadBool = input('\n-----------------\nUPLOAD? (Y/N): ')
+print('-----------------\n')
 
 if uploadBool == 'Y':
     for file in newFilesList:
@@ -37,6 +37,8 @@ if uploadBool == 'Y':
         newUpdate = updateFile(file, newUpload['id'], parentFolderID)  # update the file's parents
         if youtubeToMP3.debug:
             print('\nUpdated file: %s' % newUpdate)
+            print("\nThanks for using youtubeToMP3!\n")
+            exit(0)
 else:
-    print("Download Successful.")
+    print("Thanks for using youtubeToMP3!")
     exit(0)
