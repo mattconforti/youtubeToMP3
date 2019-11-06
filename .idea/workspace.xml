@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e17220d-0cff-4431-ba3f-bd4faf122e81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/PKG-00.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/warn-youtubeToMP3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/youtubeToMP3/xref-youtubeToMP3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/driveAPIWrite.py" beforeDir="false" afterPath="$PROJECT_DIR$/driveAPIWrite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/token.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/token.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/youtubeToMP3.py" beforeDir="false" afterPath="$PROJECT_DIR$/youtubeToMP3.py" afterDir="false" />
@@ -28,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/youtubeToMP3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+            <state relative-caret-position="195">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -37,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/driveAPIConnect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
+            <state relative-caret-position="263">
               <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
               <folding>
                 <element signature="e#308#321#0" expanded="true" />
@@ -46,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/driveAPIWrite.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
@@ -58,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+            <state relative-caret-position="294">
+              <caret line="39" column="51" lean-forward="true" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
               <folding>
                 <element signature="e#104#123#0" expanded="true" />
               </folding>
@@ -87,14 +77,14 @@
       <list>
         <option value="$PROJECT_DIR$/venv/driveAPIConnect.py" />
         <option value="$PROJECT_DIR$/driveAPIConnect.py" />
+        <option value="$PROJECT_DIR$/driveAPIWrite.py" />
         <option value="$PROJECT_DIR$/youtubeToMP3.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/driveAPIWrite.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="233" />
+    <option name="x" value="234" />
     <option name="y" value="185" />
     <option name="width" value="1440" />
     <option name="height" value="741" />
@@ -250,10 +240,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="233" y="185" width="1440" height="741" extended-state="0" />
+    <frame x="234" y="185" width="1440" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3783977" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3891273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -283,29 +273,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/driveAPIConnect.py" />
+    <entry file="file://$PROJECT_DIR$/—add-data.spec" />
+    <entry file="file://$PROJECT_DIR$/main.spec" />
+    <entry file="file://$PROJECT_DIR$/youtubeToMP3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/driveAPIConnect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
+        <state relative-caret-position="263">
           <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
           <folding>
             <element signature="e#308#321#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/youtubeToMP3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-          <folding>
-            <element signature="e#104#123#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -316,6 +298,16 @@
           <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
           <folding>
             <element signature="e#148#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="39" column="51" lean-forward="true" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+          <folding>
+            <element signature="e#104#123#0" expanded="true" />
           </folding>
         </state>
       </provider>
